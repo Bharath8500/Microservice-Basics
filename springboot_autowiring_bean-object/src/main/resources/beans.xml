@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans 
+PUBLIC "-//SPRING//DTD BEAN 2.0//EN" 
+"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean id="deliveryAddress" class= "com.autowiring.bean.objects.Address">
+	<property name="city" value="Kurnool"></property>
+	<property name="state" value="A.P"></property>
+	<property name="pinCode" value="518002"></property>
+	</bean>
+	<bean id="customer" class="com.autowiring.bean.objects.Customer" 
+	  autowire="constructor">
+	  <constructor-arg value="Bharath Chavala"></constructor-arg>
+	  <constructor-arg value="bc454s"></constructor-arg>
+	</bean>
+</beans>

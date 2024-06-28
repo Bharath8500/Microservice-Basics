@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+   <bean id="college" class="com.test.College">
+	   <property name="collegeEmail" value="gitam@login.gitam.com"></property>
+	   <property name="collegeName" value="Gitam"></property>
+	   <property name="collegePhno" value="123456"></property>
+	   </bean>
+	   <bean  id="college1" class="com.test.College">
+	   <constructor-arg value="Vidyanikethan"></constructor-arg>
+	   <constructor-arg value="Vidyanikethan@college.com"></constructor-arg>
+	   <constructor-arg value="1234512"></constructor-arg>
+   </bean>
+</beans>

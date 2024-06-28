@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean id="patient" class="com.bean_scope.Patient" scope="singleton">
+		<property name="patientName" value="Bharath Chavala"></property>
+		<property name="patientId" value="123"></property>
+		<property name="patientRoomNo" value="1"></property>
+	</bean>
+	<bean id="patientLocalAddress" class="com.bean_scope.Address">
+		<property name="city" value="kurnool"></property>
+		<property name="state" value="A.P"></property>
+	</bean>
+	<bean id="patientPrivateAddress" class="com.bean_scope.Address">
+		<property name="city" value="Hyd"></property>
+		<property name="state" value="Telangana"></property>
+	</bean>
+	<bean id="listAddress" class="com.bean_scope.Patient">
+		<property name="address">
+			<list>
+				<ref bean="patientLocalAddress" />
+				<ref bean="patientPrivateAddress" />
+			</list>
+		</property>
+	</bean>
+</beans>

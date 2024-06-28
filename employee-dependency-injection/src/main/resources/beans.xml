@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean id="employeeAddress" class="com.employee.Address">
+		<property name="city" value="Kurnool"></property>
+		<property name="state" value="A.P"></property>
+		<property name="pinCode" value="518002"></property>
+	</bean>
+	<bean id="organizationAddress" class="com.employee.Address">
+		<property name="city" value="Hyd"></property>
+		<property name="state" value="Telengana"></property>
+		<property name="pinCode" value="658802"></property>
+	</bean>
+	<bean id="organization" class="com.employee.Organization">
+		<property name="organizeName" value="TCS"></property>
+		<property name="organizeAddress" ref="organizationAddress"></property>
+	</bean>
+	<bean id="employeeDetails" class="com.employee.Employee">
+		<property name="employeeId" value="101845808"></property>
+		<property name="employeeName" value="Bharath Chavala"></property>
+		<property name="employeeSalary" value="25000"></property>
+		<property name="employeeAddress" ref="employeeAddress"></property>
+		<property name="employeeOrganize" ref="organization"></property>
+	</bean>
+	<!-- Contructor beans-->
+	<bean id="employeeAddressCon" class="com.employee.Address">
+		<constructor-arg value="Vizag"></constructor-arg>
+		<constructor-arg value="A.P"></constructor-arg>
+		<constructor-arg value="53634"></constructor-arg>
+	</bean>
+	<bean id="organizationAddressCon" class="com.employee.Address">
+		<constructor-arg value="Bnglr"></constructor-arg>
+		<constructor-arg value="Karnataka"></constructor-arg>
+		<constructor-arg value="23123"></constructor-arg>
+	</bean>
+	<bean id="organizationCon" class="com.employee.Organization">
+		<constructor-arg value="Wipro"></constructor-arg>
+		<constructor-arg ref="organizationAddressCon"></constructor-arg>
+	</bean>
+	<bean id="employeeDetailsCon" class="com.employee.Employee">
+		<constructor-arg value="123421"></constructor-arg>
+		<constructor-arg value="Kalyan"></constructor-arg>
+		<constructor-arg value="25000"></constructor-arg>
+		<constructor-arg ref="employeeAddressCon"></constructor-arg>
+		<constructor-arg ref="organizationCon"></constructor-arg>
+
+	</bean>
+</beans>
